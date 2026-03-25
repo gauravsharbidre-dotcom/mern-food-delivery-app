@@ -12,7 +12,7 @@ const app = express()
 const port = process.env.PORT || 4000;
 
 app.use(cors({
-  origin: ["http://localhost:5173", "https://food-delivery-abc.vercel.app"],
+ origin: ["http://localhost:5174", "https://food-delivery-abc.vercel.app"],
   credentials: true
 }));
 
@@ -30,10 +30,7 @@ app.use("/images", express.static('uploads'))
 app.use('/api/user', userRouter)
 app.use('/api/cart', cartRouter)
 app.use('/api/order', orderRouter)
-app.use(cors({
-  origin: ["http://localhost:5173", "https://your-frontend-url.vercel.app"],
-  credentials: true
-}));
+
 
 app.get("/", (req, res) => {
     res.send("API working")
