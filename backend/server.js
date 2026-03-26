@@ -12,11 +12,7 @@ const app = express()
 const port = process.env.PORT || 4000;
 
 app.use(cors({
-  origin: [
-    "http://localhost:5174",
-    "https://mern-food-delivery-lk7bd21r4-gauravsharbidre-dotcoms-projects.vercel.app"
-  ],
-  credentials: true
+  origin: "*"
 }));
 
 // middleware
