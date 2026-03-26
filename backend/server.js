@@ -12,14 +12,15 @@ const app = express()
 const port = process.env.PORT || 4000;
 
 app.use(cors({
- origin: ["http://localhost:5174", "https://food-delivery-abc.vercel.app"],
+  origin: [
+    "http://localhost:5174",
+    "https://mern-food-delivery-lk7bd21r4-gauravsharbidre-dotcoms-projects.vercel.app"
+  ],
   credentials: true
 }));
 
-
 // middleware
 app.use(express.json())
-
 
 // db connection
 await connectDB()
@@ -30,7 +31,6 @@ app.use("/images", express.static('uploads'))
 app.use('/api/user', userRouter)
 app.use('/api/cart', cartRouter)
 app.use('/api/order', orderRouter)
-
 
 app.get("/", (req, res) => {
     res.send("API working")
